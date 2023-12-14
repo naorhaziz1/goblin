@@ -466,7 +466,8 @@ if_sylvan! {
         Ok(nchain)
     }
 
-    struct Misc {
+    // Forked: changed to be public
+    pub struct Misc {
         is_64: bool,
         is_lib: bool,
         entry: u64,
@@ -474,7 +475,8 @@ if_sylvan! {
         ctx: Ctx,
     }
 
-    fn parse_misc(header: &Header) -> error::Result<Misc> {
+    // Forked: changed to be public
+    pub fn parse_misc(header: &Header) -> error::Result<Misc> {
         let entry = header.e_entry as usize;
         let is_lib = header.e_type == header::ET_DYN;
         let is_lsb = header.e_ident[header::EI_DATA] == header::ELFDATA2LSB;
